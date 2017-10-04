@@ -12,6 +12,11 @@
         </head>
         <body>
             <div class="page-header">
+		<!--Ссылка видна только тем кто залогинин в админке-->
+		{% if user.is_authenticated %}
+		<!-- Добавляет 'кнопку +' в шапку -->
+		<a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+		{% endif %}
                 <h1><a href="/">Django Girls Blog</a></h1>
             </div>
 
